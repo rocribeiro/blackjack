@@ -40,4 +40,13 @@ public class Carta {
     public void setValor(int valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "Carta{" +
+                "numero='" + numero + '\'' +
+                ", naipe='" + naipe + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
 }
