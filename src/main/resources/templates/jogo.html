@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo</title>
+</head>
+<body>
+<h1>Bem-vindo ao jogo</h1>
+
+<p>Nome do jogador: [[${jogador.nome}]]</p>
+<p>Pontos do jogador: [[${jogador.pontuacao}]]</p>
+
+<p>Cartas do jogador:</p>
+<ul>
+  <th:block th:each="carta : ${jogador.jogoEmMaos}">
+    <li>[[${carta.numero}]] - [[${carta.naipe}]]</li>
+  </th:block>
+</ul>
+
+<p>Cartas da banca:</p>
+<p>Pontos da banca: [[${banca.pontuacao}]]</p>
+<ul>
+  <th:block th:each="carta : ${banca.jogoEmMaos}">
+    <li>[[${carta.numero}]] - [[${carta.naipe}]]</li>
+  </th:block>
+</ul>
+
+<form action="/comprarNovaCarta" method="post">
+  <input type="hidden" name="jogoEmMaos" value="[[${jogador.jogoEmMaos}]]" />
+  <input type="hidden" name="nomeJogador" value="[[${jogador.nome}]]" />
+  <input type="hidden" name="pontuacao" value="[[${jogador.pontuacao}]]" />
+  <input type="submit" name="start" value="Comprar outra carta" />
+</form>
+<form action="/start" method="post">
+  <input type="hidden" name="nomeJogador" value="[[${jogador.nome}]]" />
+  <input type="submit" name="start" value="Parar" />
+</form>
+</body>
+</html>

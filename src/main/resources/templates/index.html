@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blackjack</title>
+    <style>
+        /* Estilos CSS para a página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .game-board {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="game-board">
+        <h1>Blackjack</h1>
+        <form th:action="@{/start}" th:object="${jogo}" method="post">
+            <label for="nomeJogador">Digite seu nome:</label>
+            <input type="text" id="nomeJogador" name="nomeJogador" required>
+            <div>
+                <button type="submit">Iniciar Jogo</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

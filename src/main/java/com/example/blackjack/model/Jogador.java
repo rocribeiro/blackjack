@@ -6,15 +6,14 @@ import java.util.List;
 public class Jogador {
     private String nome;
     private List<Carta> jogoEmMaos;
-
     private int pontuacao;
 
     public Jogador(){
-
+        jogoEmMaos = new ArrayList<>();
     }
     public Jogador(String nome) {
         this.nome = nome;
-        this.jogoEmMaos = new ArrayList<>();
+        jogoEmMaos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -46,11 +45,4 @@ public class Jogador {
         setPontuacao(getPontuacao()+carta.getValor());
     }
 
-    @Override
-    public String toString() {
-        return "Jogador{" +
-                "nome='" + nome + '\'' +
-                ", jogoEmMaos=" + jogoEmMaos.toString() +
-                '}';
-    }
 }
