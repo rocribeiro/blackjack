@@ -10,7 +10,7 @@ public class Jogador {
     private int pontuacao;
 
     public Jogador(){
-
+        this.jogoEmMaos = new ArrayList<>();
     }
     public Jogador(String nome) {
         this.nome = nome;
