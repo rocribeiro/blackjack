@@ -1,9 +1,11 @@
 package com.example.blackjack.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+@Component
 public class Baralho {
     private List<Carta> cartas;
 
@@ -14,9 +16,13 @@ public class Baralho {
 
         for (String naipe : naipes) {
             for (int i = 0; i < numeros.length; i++) {
-                int valor = i + 2;
-                if (i >= 9) {
-                    valor = 10;
+                int valor;
+                if (numeros[i].equals("A")) {
+                    valor = 1; // Inicialmente, atribui o valor 1 para a carta A (Ás)
+                } else if (i >= 9) {
+                    valor = 10; // Atribui o valor 10 para as cartas J, Q e K
+                } else {
+                    valor = i + 2; // Atribui os valores de 2 a 10 para as outras cartas numéricas
                 }
                 cartas.add(new Carta(numeros[i], naipe, valor));
             }
