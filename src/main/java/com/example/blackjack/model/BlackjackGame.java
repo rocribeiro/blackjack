@@ -1,10 +1,6 @@
-package com.example.blackjack.model;//package com.example.blackjack.domain;
+package com.example.blackjack.model;
 
-import com.example.blackjack.model.Baralho;
-import com.example.blackjack.model.Jogador;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class BlackjackGame {
